@@ -1,0 +1,43 @@
+package lesson12.jmenu;
+
+import lesson12.frameContinue.TemplateFrame;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class JMenuTest extends TemplateFrame {
+        JMenuTest(){
+            super();
+            var menuBar= new JMenuBar();
+            JMenu mainMenu = new JMenu("Главное меню");
+            var font = new Font("serif", Font.BOLD, 15);
+            mainMenu.setFont(font);
+            var menuInner = new JMenu("О компании");
+            mainMenu.add(menuInner);
+            var item1 = new JMenuItem("Услуги");
+            var item2 = new JMenuItem("История");
+            var item3 = new JMenuItem("Контакты");
+            item1.setFont(font);
+            item2.setFont(font);
+            item3.setFont(font);
+            menuInner.add(item1);menuInner.add(item2);menuInner.add(item3);
+            mainMenu.addSeparator();
+            var item4 = new JMenuItem("Выход");
+            item4.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent actionEvent) {
+                    System.exit(0);
+                }
+            });
+            mainMenu.add(item4);
+            menuBar.add(mainMenu);
+            setJMenuBar(menuBar);
+
+        }
+
+    public static void main(String[] args) {
+        new JMenuTest().setVisible(true);
+    }
+}
