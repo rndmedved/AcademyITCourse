@@ -18,7 +18,8 @@ public class Calculator extends JFrame {
 
         var c = getContentPane();
         var panel = new JPanel();
-        JButton buttons[] =  new JButton[17];
+        panel.setLayout(new GridLayout(4,3));
+        JButton buttons[] =  new JButton[18];
         var font = new Font("serif",Font.ITALIC, 15);
         for (int i = 0; i < buttons.length; i++) {
             buttons[i] = new JButton();
@@ -91,23 +92,25 @@ public class Calculator extends JFrame {
         buttons[13].setText("/");
         buttons[14].setText("=");
         buttons[15].setText("C");
-        buttons[16].setText("Выход");
+        buttons[16].setText(".");
+        buttons[17].setText("Выход");
 
-        var res = new JLabel("Результат");
-        res.setFont(new Font("serif", Font.ITALIC|Font.BOLD, 30));
-        res.setBounds(130, 0, 300 , 50);
-        panel.add(res);
+
+//        var res = new JLabel("Результат");
+//        res.setFont(new Font("serif", Font.ITALIC|Font.BOLD, 30));
+//        res.setBounds(130, 0, 300 , 50);
+//        panel.add(res);
 
         textArea = new JTextArea();
         textArea.setFont(new Font("serif", Font.BOLD, 30));
         textArea.setBounds(300, 50, 300 , 35);
-        panel.add(textArea);
+        panel.add(textArea, 0);
         c.add(panel);
 
-        setSize(800, 200);
+        setSize(600, 600);
         setTitle("Медвед калькулятор.");
         setLocationRelativeTo(null);
-        setResizable(false);
+        setResizable(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
