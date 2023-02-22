@@ -8,24 +8,29 @@ import java.awt.event.ActionListener;
 public class Calculator extends JFrame {
     private JTextArea textArea; //поле для ввода цифр.
     private int oper;
-
+    JLabel label;
 
     private double number1 =0;
     private double number2 = 0;
     Calculator(){
 
 
-
+        Container container = getContentPane();
+        label = new JLabel();
         var c = getContentPane();
+        JPanel head = new JPanel();
+        JPanel mid = new JPanel();
+        mid.setLayout(new GridLayout(0, 1));
+        head.setLayout(new GridLayout(0, 1));
         var panel = new JPanel();
-        panel.setLayout(new GridLayout(4,3));
+        panel.setLayout(new GridLayout(6,3));
         JButton buttons[] =  new JButton[18];
         var font = new Font("serif",Font.ITALIC, 15);
         for (int i = 0; i < buttons.length; i++) {
             buttons[i] = new JButton();
             buttons[i].setFont(font);
             buttons[i].setLocation(100, 50 + 30 * i);
-            buttons[i].setSize(100, 25);
+            buttons[i].setSize(100, 50);
             buttons[i].setBackground(Color.DARK_GRAY);
             buttons[i].setForeground(Color.WHITE);
             buttons[i].addActionListener(new ActionListener() {
@@ -45,6 +50,7 @@ public class Calculator extends JFrame {
                         }else{  number2 = Double.parseDouble(textArea.getText());}
                         switch (oper){
                             case 1: textArea.setText("" + (number1 + number2));
+                                    label.setText(number1 + " + " + number2 + " = " + (number1+number2));
                                 break;
                             case 2: textArea.setText("" + (number1 - number2));
                                 break;
@@ -60,6 +66,7 @@ public class Calculator extends JFrame {
                             }
 
                         }
+
                     } else if(textButton.equalsIgnoreCase("+")){
                         number1 = Double.parseDouble(textArea.getText());
                         oper = 1;
@@ -100,14 +107,19 @@ public class Calculator extends JFrame {
 //        res.setFont(new Font("serif", Font.ITALIC|Font.BOLD, 30));
 //        res.setBounds(130, 0, 300 , 50);
 //        panel.add(res);
-
+        label.setFont(font);
+        mid.add(label);
         textArea = new JTextArea();
         textArea.setFont(new Font("serif", Font.BOLD, 30));
         textArea.setBounds(300, 50, 300 , 35);
-        panel.add(textArea, 0);
-        c.add(panel);
+        head.add(textArea);
+        c.add(head, BorderLayout.NORTH);
+        c.add(new JSeparator(), BorderLayout.CENTER);
+        c.add(mid, BorderLayout.CENTER);
+        c.add(new JSeparator(), BorderLayout.CENTER);
+        c.add(panel,BorderLayout.SOUTH);
 
-        setSize(600, 600);
+        setSize(400, 400);
         setTitle("Медвед калькулятор.");
         setLocationRelativeTo(null);
         setResizable(true);
