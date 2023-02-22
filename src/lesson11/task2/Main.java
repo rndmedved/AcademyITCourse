@@ -3,7 +3,7 @@ package lesson11.task2;
 //ошибок в буквосочетании «жи» и «ши» и исправить их.
 public class Main {
     public static void main(String[] args) {
-        String sentence = "Жы жы жЫ ЖЫ шы шы Шы фывафыв ждодлфывао";
+        String sentence = "Жы жы жЫ ЖЫ шы шы Шы.";
         sentence = sentence.replaceAll("Жы", "Жи");
         sentence = sentence.replaceAll("жЫ", "жИ");
         sentence = sentence.replaceAll("ЖЫ", "ЖИ");
