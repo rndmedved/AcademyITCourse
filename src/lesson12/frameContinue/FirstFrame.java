@@ -20,7 +20,7 @@ public class FirstFrame extends TemplateFrame {
         this.lastName = new JTextField(lastNameT, 20);
         this.surname = new JTextField(surnameT,20);
         var container = getContentPane();
-        container.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20));
+        container.setLayout(new GridLayout(4, 2));
         container.add(firstNameLabel);
         container.add(this.firstName);
         container.add(lastNameLabel);
@@ -31,14 +31,15 @@ public class FirstFrame extends TemplateFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                setVisible(false); //Скрыли окно
-                new SecondFrame(
-                        firstName.getText().concat(" ").concat(
-                                lastName.getText()
-                        ).concat(" ").concat(
-                                surname.getText()
-                        )
-                ).setVisible(true);
+//                setVisible(false); //Скрыли окно
+                firstNameLabel.setText(lastName.getText());
+//                new SecondFrame(
+//                        firstName.getText().concat(" ").concat(
+//                                lastName.getText()
+//                        ).concat(" ").concat(
+//                                surname.getText()
+//                        )
+//                ).setVisible(true);
             }
         });
         container.add(button);
