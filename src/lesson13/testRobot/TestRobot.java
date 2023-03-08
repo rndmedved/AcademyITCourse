@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class TestRobot {
+//    Эмуляция действия пользователя.
     Robot robot;
     public TestRobot() throws AWTException {
         robot = new Robot();
