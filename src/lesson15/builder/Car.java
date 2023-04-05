@@ -86,6 +86,16 @@ public class Car {
             wheels = new Wheels(type,isLowProfile);
             return this;
         }
+        private Body getDefaultBody(){
+            return new Body(Body.Color.WHITE, Body.Type.SEDAN);
+        }
+        private Engine getDefaultEngine(){
+            return new Engine(106, 2.5);
+        }
+
+        private Wheels getDefaultWheels(){
+            return new Wheels(Wheels.Type.WINTER, false);
+        }
 
         /**
          * Получаем готовый авто
@@ -94,6 +104,15 @@ public class Car {
         public Car build(){
             if(title == null){
                 title = "Basic car";
+            }
+            if(body == null){
+                body = getDefaultBody();
+            }
+            if (engine == null){
+                engine = getDefaultEngine();
+            }
+            if(wheels == null){
+                wheels = getDefaultWheels();
             }
             return new Car(title,body,engine,wheels);
         }

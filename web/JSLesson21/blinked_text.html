@@ -1,0 +1,15 @@
+<script>
+    
+    let color = 'red';
+    window.onload = function(){
+        let header = document.querySelector('h1');
+        setInterval(function(){
+            color = color == 'red' ? 'blue' : 'red';
+            header.style.color = color;
+        }, 1000);
+        
+   }
+
+</script>
+
+<h1>Моргающий текст</h1>

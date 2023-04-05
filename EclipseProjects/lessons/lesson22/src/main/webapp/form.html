@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+    	window.onload = function(){
+			document.querySelector("form").onsubmit = function(e){
+				e.preventDefault();//отменяем перегрузку страницы по событию submit
+				$.ajax({
+	    			type:"POST",
+	    			url:"Test",
+	    			data: $("form").serialize(),
+	    			success: function(answer){
+	    				$("h1").html(answer);
+	    			}
+	    				
+	    		})
+			}
+		}    
+    
+    
+    </script>
+</head>
+<body>
+	<h1></h1>
+    <form method="POST">
+        <p>Введите имя</p>
+        <input type="text" name="fio">
+        <p>Введите возраст</p>
+        <input type="text" name="age"><br><br>
+        <input type="submit" value="Отправить">
+    </form><hr>
+    <a href="Demo?fio=Олег&age=40">Передать данные</a>
+</body>
+</html>

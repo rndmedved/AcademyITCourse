@@ -1,2 +1,6 @@
-package lesson15.abstractFactory;public class AbstractFactory {
+package lesson15.abstractFactory;
+
+public abstract class AbstractFactory {
+    public abstract Food createFood();
+    public abstract Drink createDrink();
 }

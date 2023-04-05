@@ -1,0 +1,40 @@
+body {
+margin: 0;
+padding: 0;
+background-color: #f2f2f2;
+}
+.container {
+max-width: 1000px;
+margin: auto;
+position: relative;
+}
+.gallery {
+width: 100%;
+height: 300px;
+overflow: hidden;
+position: relative;
+}
+.gallery img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+position: absolute;
+top: 0;
+left: 0;
+transform: translateX(100%);
+transition: transform 1s ease-in-out;
+}
+.gallery img.active {
+transform: translateX(0);
+z-index: 1;
+}
+.btn {
+display: inline-block;
+padding: 10px 20px;
+background-color: #333;
+color: #fff;
+text-decoration: none;
+border-radius: 5px;
+margin: 10px;
+cursor: pointer;
+}

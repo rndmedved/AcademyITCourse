@@ -14,6 +14,14 @@ public class Test {
         System.out.println(calendar.get(Calendar.YEAR) + " " +
                 (calendar.get(Calendar.MONTH) + 1) + " " +
                 calendar.get(calendar.DATE));
+        int i = 0;
+        for (; ;) {
+            i++;
+            if (i==5){
+                break;
+            }
+            System.out.println(i);
+        }
 
     }
 }

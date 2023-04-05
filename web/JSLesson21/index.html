@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            let list = document.querySelector('ul');
+            let newItem = document.createElement('li');
+            newItem.innerText = 'новый элемент';
+            // list.append(newItem);
+            list.insertBefore(newItem,list.children[3]);
+            
+
+
+            // сделаем ссылку
+            let block = document.createElement('div');
+            document.body.append(block);
+            let a = document.createElement("a");
+            a.href = 'https://ya.ru';
+            a.innerText = "Перейти в поисковик Яндекс";
+            a.onclick = function(e){
+                // если внутри функции необходимо обращаться к источнику событию есть 2 способа
+                event.preventDefault(); //отмена действия по умолчанию
+                location.href = "https://mail.ru" //добавили редирект
+                this.style.color = 'red';
+            }
+            block.append(a);
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li> 1 элемент</li>
+        <li> 2 элемент</li>
+        <li> 3 элемент</li>
+        <li> 4 элемент</li>
+        <li> 5 элемент</li>
+
+    </ul>
+</body>
+</html>
