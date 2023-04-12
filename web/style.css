@@ -1,0 +1,60 @@
+h4{
+    text-align: center;
+}
+p{
+    color:navy;
+    font-style: italic;
+    font-size: 1em;
+}
+.block_image{
+    border:none; 
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    outline: none;
+    display: inline-block;
+    overflow: hidden;     
+}
+.block_image_vertical{
+    border:none; 
+    width: 300px;
+    height: 451px;
+    border-radius: 10px;
+    outline: none;
+    display: inline-block;
+    overflow: hidden;     
+}
+.block_image:hover{
+    outline: 2px solid rgb(0, 255, 149);     
+}
+.block_image:active{
+    outline: 2px solid lightblue;
+}
+.block_image img{        
+    transition: 2s;
+    display: block;
+}
+.block_image img:hover{    
+    transform: scale(1.2);/*увеличиваем масштаб*/
+}
+.block_image_vertical:hover{
+    outline: 2px solid rgb(0, 255, 149);     
+}
+.block_image_vertical:active{
+    outline: 2px solid lightblue;
+}
+.block_image_vertical img{        
+    transition: 2s;
+    display: block;
+}
+.block_image_vertical img:hover{    
+    transform: scale(1.2);/*увеличиваем масштаб*/
+}
+.text_info{
+    color:navy;
+    font-style: italic;
+    font-size: 1em;
+}
+.content{
+    margin-top: 200px;
+}
