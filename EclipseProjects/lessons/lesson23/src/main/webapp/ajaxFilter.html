@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    function getMarki(){
+        $.ajax({
+	    			type:"GET",
+	    			url:"catalog",	    			
+	    			success: function(answer){
+	    				$("#marki").append(answer);
+	    			}
+                });	   
+    }
+</script>
+</head>
+<body onload="getMarki()">
+    <select name="marki" id=""></select>
+    <select name="models" id=""></select>
+</body>
+</html>
