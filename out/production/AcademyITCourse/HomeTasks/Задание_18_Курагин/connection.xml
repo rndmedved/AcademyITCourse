@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<connects>
+    <server>
+        <driver>com.mysql.cj.jdbc.Driver</driver>
+        <base>lesson14</base>
+        <URL>localhost</URL>
+        <login>root</login>
+        <password></password>
+    </server>
+</connects>

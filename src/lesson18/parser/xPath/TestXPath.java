@@ -17,7 +17,7 @@ public class TestXPath {
        NodeList nodeList = (NodeList) xPath.evaluate("//book[@id = 1]",new InputSource(new FileReader("./src/books.xml")), XPathConstants.NODESET);
         for (int i = 0; i < nodeList.getLength(); i++) {
             System.out.println(nodeList.item(i).getNodeName());
-            System.out.println(nodeList.item(i).);
+            System.out.println(nodeList.item(i).getNodeValue());
         }
     }
 }
